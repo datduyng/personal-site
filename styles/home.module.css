@@ -1,0 +1,16 @@
+.masonry-grid {
+  display: flex;
+  width: auto;
+  @apply -ml-7;
+}
+.masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
+}

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-main text-text;
+}
+
+.accent-body-bg {
+  background: #c471ed;
+  background: linear-gradient(45deg, rgb(62, 28, 205) 0%, rgb(255, 104, 113) 100%);
+
+}
