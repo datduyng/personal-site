@@ -9,7 +9,7 @@ const Header = () => {
         <NavLink href="/projects">Projects</NavLink>
       </div>
       <div>
-        <NavLink href="https://github.com/datduyng/datduyng.github.io">
+        <NavLink href="https://github.com/datduyng/domnguyen.qstack.us">
           Github
         </NavLink>
       </div>
