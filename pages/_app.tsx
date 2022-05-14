@@ -31,7 +31,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Dominic Nguyen</title>
         <meta name="title" content="Dominic Nguyen" />
         <meta name="description" content="Hi, I'm Dominic Nguyen. Welcome to my online real estate. I am a software engineer @ Microsoft. I ❤️ Startups and Opensource" />
-
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+        />
+        
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://domnguyen.qstack.us" />
         <meta property="og:title" content="Dominic Nguyen" />
