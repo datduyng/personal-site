@@ -11,7 +11,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({
 }) => {
   return (
     <div className={`mx-auto max-w-screen-md`}>
-      <div className={cn("flex flex-col justify-center mb-8", className)}>
+      <div className={cn("flex flex-col justify-center mb-8 xs:mx-5", className)}>
         <Header />
         <Spacer />
         {children}

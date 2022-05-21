@@ -27,7 +27,7 @@ const NoteIndex: NextPage<NoteIndexProps> = ({ notes, archivedNotes }) => {
 
 const NoteHeaderCard = ({ title, desc }: { title: string; desc: string }) => {
   return (
-    <div className="px-5 pt-8 pb-5">
+    <div className="pt-8 pb-5">
       <h1 className="text-4xl font-bold text-left">{title}</h1>
       <p className="font-normal text-secondary mt-3">{desc}</p>
     </div>
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
       notes: publicNotes,
       archivedNotes,
     } as NoteIndexProps,
-    // revalidate: 60,
+    revalidate: 60,
   };
 };
 

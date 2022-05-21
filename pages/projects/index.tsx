@@ -41,7 +41,6 @@ export const defaultMapPageUrl = (recordMap: notion.ExtendedRecordMap) => (pageI
 const ProjectIndex: NextPage<ProjectIndexProps> = ({recordMap}) => {
   return <DefaultLayout>
       {recordMap && <NotionRenderer 
-        className="xs:mx-5"
         recordMap={recordMap} 
         fullPage={true} 
         darkMode={true} 
