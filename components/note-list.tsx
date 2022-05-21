@@ -13,7 +13,7 @@ const NoteList: React.FC<NoteListProps> = ({ notes }) => {
   }
   const router = useRouter();
   return (
-    <div className="flex flex-col gap-5 w-full">
+    <div className="flex flex-col w-full">
       {notes.map((note) => (
         <NoteCardItem
           key={note.id}
