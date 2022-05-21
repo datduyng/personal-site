@@ -24,10 +24,10 @@ const NoteList: React.FC<NoteListProps> = ({ notes }) => {
           }}
         >
           <h3 className="text-2xl font-bold cursor-pointer">
-            {note.name || ""}
+            {note.page_emoji ? note.page_emoji + " " : ""}{note.name || ""}
           </h3>
           <h6 className="text-md text-white mt-1">{note.previewDesc}</h6>
-          <p className="text-secondary text-sm mt-1">{note.publishedDate}</p>
+          <p className="text-secondary text-sm mt-1">{note.location ? note.location + " ⸱ " : ""}{note.publishedDate}</p>
         </NoteCardItem>
       ))}
     </div>

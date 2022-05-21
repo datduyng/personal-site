@@ -13,9 +13,9 @@ const NOTION_FEATURED_PROJECT_COLLECTION_VIEW_ID = process.env.NOTION_FEATURED_P
 export const getMyNotionNoteListData = async () => {
   if (!NOTION_NOTES_COLLECTION_ID || !NOTION_NOTES_COLLECTION_VIEW_ID || !NOTION_PROJECT_PAGE_ID) {
     console.error(
-      "Invalid NOTION_NOTES_COLLECTION_ID, or NOTION_NOTES_COLLECTION_ID"
+      "Invalid NOTION_NOTES_COLLECTION_ID, or NOTION_NOTES_COLLECTION_ID or NOTION_NOTES_COLLECTION_VIEW_ID"
     );
-    return null;
+    return [];
   }
 
   const notionCollection =
@@ -34,8 +34,20 @@ export const getMyNotionNoteListData = async () => {
     noteListSchema as any
   );
 
-  return notionCollectionParser.getListPreview();
+  return notionCollectionParser.getListPreview() || [];
 };
+
+export const getMyPublicNotionNoteListData = async () => {
+  const notes = await getMyNotionNoteListData();
+  return notes.filter(note => note?.published && !note?.archived);
+};
+
+export const getMyArchivedNotionNoteListData = async () => {
+  const notes = await getMyNotionNoteListData();
+  return notes.filter(note => note?.published && note?.archived);
+};
+
+
 
 const noteListSchema = [
   "name",
@@ -44,6 +56,7 @@ const noteListSchema = [
   "previewDesc",
   "publishedDate",
   "tags",
+  "location",
 ] as const;
 
 export type NoteListSchema = {
@@ -53,6 +66,7 @@ export type NoteListSchema = {
   published?: string;
   archived?: boolean;
   publishedDate?: string;
+  location?: string;
   tags?: string[];
   page_cover?: string | undefined;
   page_icon?: string | undefined;

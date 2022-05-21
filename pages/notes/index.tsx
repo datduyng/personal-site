@@ -2,7 +2,9 @@ import type { NextPage, GetStaticProps } from "next";
 import DefaultLayout from "../../components/default-layout";
 import NoteList from "../../components/note-list";
 import {
+  getMyArchivedNotionNoteListData,
   getMyNotionNoteListData,
+  getMyPublicNotionNoteListData,
   NoteListSchema,
 } from "../../lib/notion-api-client";
 
@@ -32,18 +34,17 @@ const NoteHeaderCard = ({ title, desc }: { title: string; desc: string }) => {
   );
 };
 
+const pageSortDesc = (a: NoteListSchema | null, d: NoteListSchema | null) => d?.publishedDate?.localeCompare(a?.publishedDate || '') || 0;
+
 export const getStaticProps: GetStaticProps = async () => {
-  let allNotes = (await getMyNotionNoteListData()) || [];
-  const notes = allNotes.filter((n) => n?.published && !n?.archived && n?.name);
-  const archivedNotes = allNotes.filter(
-    (n) => n?.published && n?.archived && n?.name
-  );
+  let publicNotes = (await getMyPublicNotionNoteListData()).sort(pageSortDesc);
+  let archivedNotes = (await getMyArchivedNotionNoteListData()).sort(pageSortDesc);
   return {
     props: {
-      notes,
+      notes: publicNotes,
       archivedNotes,
     } as NoteIndexProps,
-    revalidate: 60,
+    // revalidate: 60,
   };
 };
 
