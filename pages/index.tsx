@@ -98,11 +98,12 @@ const CardList: React.FC<CardListProps> = ({
 
 const Spacer = () => <div className="h-7" />;
 
+const pageSortDesc = (a: NoteListSchema | null, d: NoteListSchema | null) => d?.publishedDate?.localeCompare(a?.publishedDate || '') || 0;
 export const getStaticProps: GetStaticProps = async () => {
   const favArtists = (await getTopArtist()) || [];
   const recentWatch = (await getMyRecentWatch()) || [];
-  const allNotes = (await getMyNotionNoteListData()) || [];
-  const latestNote = allNotes.find(
+  const allNotes = await getMyNotionNoteListData();
+  const latestNote = allNotes.sort(pageSortDesc).find(
     (n) => n?.published && !n?.archived && n?.name
   ) || null;
   const projects = (await getFeaturedProjectListSchema()) || [];
