@@ -9,7 +9,7 @@ export default function FeaturedProjectCard() {
       {`I am working on `}
       <a className="underline" href="https://figbaros.domng.net/" target={'_blank'}>
         FigbarOS
-      </a>
+      </a> {` (only work well on MacOS at the moment)`}
       {`, a fresh approach to the web browser. Imagine a worksplace where you can browse the web spatially and mindmap without having to switch context to multiple app.`}
     </p>
   </HomePageCard>)
