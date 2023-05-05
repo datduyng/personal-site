@@ -88,7 +88,7 @@ const CardList: React.FC<CardListProps> = ({
       <FeaturedProjectCard />
       <ProjectListCard projects={projects || []}/>
       <LatestNoteCard note={latestNote} />
-      <FavoriteArtistCard favArtists={favArtists} />
+      {/* <FavoriteArtistCard favArtists={favArtists} /> */}
       <RecentWatchCard recentWatch={recentWatch} />
       <ReachMeAtCard />
       <NowPlayingSpotifyCard nowPlaying={nowPlaying}/> 
