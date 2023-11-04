@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="https://domng.net/images/seo.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property='twitter:name' content='domnguyen5653' />
+        <meta property='twitter:name' content='domng_me' />
         <meta property="twitter:url" content="https://twitter.com/domnguyen5653" />
         <meta property="twitter:title" content="Dominic Nguyen" />
         <meta property="twitter:description" content="Hi, I'm Dominic Nguyen. Welcome to my online real estate. I am a software engineer @ Microsoft. I ❤️ Startups and Opensource" />
