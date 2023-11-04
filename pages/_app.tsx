@@ -8,10 +8,6 @@ import { GA_TRACKING_ID, pageview } from '../lib/gtag.client';
 import "../styles/globals.css";
 import "../styles/notion-page.css";
 import 'prismjs/themes/prism-tomorrow.css'
-// used for collection views (optional)
-import "react-notion-x/build/third-party/collection.css";
-// used for rendering equations (optional)
-import "react-notion-x/build/third-party/equation.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -35,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
         />
-        
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://domng.net" />
         <meta property="og:title" content="Dominic Nguyen" />
