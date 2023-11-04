@@ -1,3 +1,5 @@
+
+/** @type {import('next').NextConfig} */
 module.exports = {
   images: {
     domains: [
@@ -6,4 +8,10 @@ module.exports = {
       "domnguyen.notion.site", //notion
     ],
   },
+  rewrites: async () => [
+    {
+      source: "/l/:slug*",
+      destination: "https://notion-url-shortener-dom.vercel.app/:slug*",
+    }
+  ]
 };
