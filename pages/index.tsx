@@ -86,12 +86,12 @@ const CardList: React.FC<CardListProps> = ({
       className={styles["masonry-grid"]}
     >
       <FeaturedProjectCard />
-      <ProjectListCard projects={projects || []}/>
+      <ProjectListCard projects={projects || []} />
       <LatestNoteCard note={latestNote} />
       {/* <FavoriteArtistCard favArtists={favArtists} /> */}
       <RecentWatchCard recentWatch={recentWatch} />
       <ReachMeAtCard />
-      <NowPlayingSpotifyCard nowPlaying={nowPlaying}/> 
+      <NowPlayingSpotifyCard nowPlaying={nowPlaying} />
     </Masonry>
   );
 };
@@ -100,27 +100,35 @@ const Spacer = () => <div className="h-7" />;
 
 const pageSortDesc = (a: NoteListSchema | null, d: NoteListSchema | null) => d?.publishedDate?.localeCompare(a?.publishedDate || '') || 0;
 export const getStaticProps: GetStaticProps = async () => {
-  const favArtists = (await getTopArtist()) || [];
-  const recentWatch = (await getMyRecentWatch()) || [];
-  const allNotes = await getMyNotionNoteListData();
+  const [
+    favArtists,
+    recentWatch,
+    allNotes,
+    projects,
+    spotifyPlaying
+  ] = await Promise.all([
+    getTopArtist(),
+    getMyRecentWatch(),
+    getMyNotionNoteListData(),
+    getFeaturedProjectListSchema(),
+    getSpotifyPlaying().catch(e => (console.error('error when fetching is nowplaying', e), null))
+  ]);
+
   const latestNote = allNotes.sort(pageSortDesc).find(
     (n) => n?.published && !n?.archived && n?.name
   ) || null;
-  const projects = (await getFeaturedProjectListSchema()) || [];
+
   let nowPlaying = false;
-  try {
-    const spotifyPlaying = await getSpotifyPlaying();
+  if (spotifyPlaying) {
     nowPlaying = !!spotifyPlaying?.is_playing;
-  } catch (e) {
-    console.error('error when fetching is nowplaying', e);
   }
-  
+
   return {
     props: {
-      favArtists,
-      recentWatch,
+      favArtists: favArtists || [],
+      recentWatch: recentWatch || [],
       latestNote,
-      projects,
+      projects: projects || [],
       nowPlaying,
     },
     revalidate: 60,
