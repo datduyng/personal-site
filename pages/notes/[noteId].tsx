@@ -80,6 +80,7 @@ export async function getStaticPaths() {
   };
 }
 
+
 interface NoteProps {
   recordMap?: notion.ExtendedRecordMap;
 }
