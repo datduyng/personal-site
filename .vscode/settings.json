@@ -1,0 +1,54 @@
+{
+    "editor.formatOnSave": true,
+    "[css]": {
+      "editor.formatOnSave": false
+    },
+    "editor.tabCompletion": "on",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/.next": true,
+      "**/_build": true,
+      "**/deps": true
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "tailwindCSS.classAttributes": [
+      "class",
+      "className",
+      ".*Styles",
+      ".*styles",
+      ".*Variant",
+      "variant",
+      ".*Variants",
+      ".*Cva",
+      ".*cn"
+    ],
+    "tailwindCSS.experimental.classRegex": [
+      "class",
+      "className",
+      ".*Styles",
+      ".*styles",
+      ".*Variant",
+      "variant",
+      ".*Variants",
+      ".*Cva",
+      ".*cn"
+    ],
+    "headwind.runOnSave": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "files.eol": "\n",
+    "editor.indentSize": 2
+  }
