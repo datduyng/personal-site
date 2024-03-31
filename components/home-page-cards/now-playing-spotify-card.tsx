@@ -16,12 +16,12 @@ export default function NowPlayingSpotifyCard({ nowPlaying }: { nowPlaying?: boo
       })
   }, [])
   return <HomePageCard className=''>
-    <div className='flex flex-row justify-center items-center gap-2'>
-      <Image src="/spotify-logo.svg" height={32} width={32} />
+    <div className='flex flex-row gap-2 justify-center items-center'>
+      <Image alt="Spotify logo" src="/spotify-logo.svg" height={32} width={32} />
 
       {isPlaying
-        ? <h3 className='text-lg self-center'>Now playing 🎧 <span className='text-secondary'> - Spotify</span></h3>
-        : <h3 className='text-lg self-center'> Not Playing <span className='text-secondary'> - Spotify</span></h3>}
+        ? <h3 className='self-center text-lg'>Now playing 🎧 <span className='text-secondary'> - Spotify</span></h3>
+        : <h3 className='self-center text-lg'> Not Playing <span className='text-secondary'> - Spotify</span></h3>}
     </div>
   </HomePageCard>
 }

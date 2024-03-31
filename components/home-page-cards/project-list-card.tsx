@@ -8,7 +8,7 @@ import * as gtag from '../../lib/gtag.client';
 
 export default function ProjectListCard({ projects }: { projects: ProjectListSchema[] }) {
   return <HomePageCard>
-    <h3 className='text-lg self-center'>🕹️ Projects</h3>
+    <h3 className='self-center text-lg'>🕹️ Projects</h3>
     <div className='h-[1px] bg-secondary-reallight my-4' />
     <div className='flex flex-col gap-3'>
       {projects.map(project => <ProjectItem key={project.id} project={project} />)}
@@ -30,8 +30,8 @@ const ProjectItem: React.FC<{ project: ProjectListSchema }> = ({ project }) => {
   };
 
   return (<div className={cn('flex flex-row gap-3', project.url ? 'cursor-pointer' : '')} onClick={project.url ? onClick : undefined}>
-    <div className='self-center flex-shrink-0'>
-      {project.page_icon ? <Image className='rounded-lg' src={project.page_icon} width={60} height={60} />
+    <div className='flex-shrink-0 self-center'>
+      {project.page_icon ? <Image alt="Project page icon" className='rounded-lg' src={project.page_icon} width={60} height={60} />
         : <div className='text-6xl'>
           {project.page_emoji || "🧸"}
         </div>}
