@@ -6,24 +6,25 @@
     "start": "next start"
   },
   "dependencies": {
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "letterboxd": "^3.1.1",
-    "next": "^12.3.4",
+    "next": "^14.1.4",
     "notion-client": "^6.16.0",
+    "nuqs": "^1.17.1",
     "prismjs": "^1.29.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-masonry-css": "^1.0.16",
     "react-notion-x": "^6.16.0",
-    "react-tooltip": "^4.5.1"
+    "react-tooltip": "^5.26.3"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
     "@types/react": "17.0.38",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.19",
     "notion-types": "^6.16.0",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "typescript": "4.5.4"
   }
 }

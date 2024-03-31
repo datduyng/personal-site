@@ -14,7 +14,7 @@ module.exports = {
       destination: "https://notion-url-shortener-dom.vercel.app/:slug*",
     },
     {
-      source: "/tools/universal-ocr/:slug*",
+      source: "/tools/ocr/:slug*",
       destination: "https://universal-ocr.vercel.app/:slug*",
     }
   ]
